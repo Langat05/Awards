@@ -35,11 +35,54 @@
                 <div id="menu-toogle" class="d-flex align-items-center w-25 pl-4">
                     <h6 class="mb-0 pr-4 f-10">MENU</h6>
                 </div>
-                <a class="navbar-brand" href="#"><b>Awwards Website</b></a>
+                <a class="navbar-brand" href="#"><b>Welcome to Awwards Website</b></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333"
                     aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                {% if user.is_authenticated %}
+                <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="{% url 'home'%}">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
 
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Account
+                            </a>
+                            <div class="dropdown-menu dropdown-default" aria-labelledby="navbarDropdownMenuLink-333">
+                                <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <div>
+
+                        <a class="navbar-brand" href="{% url 'newproject' %}">Submit Project</a>
+
+                    </div>
+
+                    {% else %}
+                    <div>
+                        <li class="navbar-item" style="list-style: none;">
+                            <a class="nav-link text-black" href="{% url 'login' %}">
+                                <h4>Login</h4>
+                            </a>
+                        </li>
+                    </div>
+                    <div>
+                        <li class="navbar-item" style="list-style: none;">
+                            <a class="nav-link text-black" href="{% url 'register' %}">
+                                <h4>Register</h4>
+                            </a>
+
+                        </li>
+                    </div>
+                    {% endif %}
+                    </ul>
+                </div>
         </nav>
