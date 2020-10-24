@@ -1,40 +1,45 @@
-{% load bootstrap4 %}
 {% load static %}
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  {% if title %}
-  <title><strong>LAngat {{title}}</strong></title>
-  {% else %}
-    <title> Langat</title>
-  {% endif %}
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Limelight" rel="stylesheet">
 
-  {% block styles %}
-    {% bootstrap_css %}
-      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-   integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-      <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.10/css/mdb.min.css" rel="stylesheet">
-
-  {% endblock %}
-
+    <title>Langat</title>
 </head>
+
 <body>
-    {% block content %}
+    <section>
+        <!-- top navbar-->
+        <div class="over-nav container-fluid px-4 py-4 c-darkgrey txt-lightgrey ">
+            <div class="d-flex justify-content-between">
+                <div class="d-flex mr-auto">
+                    <h6 class="mb-0 lan f-12 pb-0"><u>ENGLISH</u></h6>
+                </div>
+                <div class="d-flex">
+                    <p class="d-flex ml-auto">Creativity, Design & Innovation Awwards </p>
+                </div>
+                <div class="d-flex ml-auto">
+                </div>
+            </div>
+        </div>
 
+        <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-info">
+            <div class="container-fluid px-0 d nav-border text-white-50">
+                <div id="menu-toogle" class="d-flex align-items-center w-25 pl-4">
+                    <h6 class="mb-0 pr-4 f-10">MENU</h6>
+                </div>
+                <a class="navbar-brand" href="#"><b>Awwards Website</b></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-    {% endblock %}
-
-
-    {% block scripts %}
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
-<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
-
-     {% bootstrap_javascript %}
-    {% endblock %}
-</body>
-</html>
+        </nav>
