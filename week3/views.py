@@ -98,12 +98,13 @@ def get_project(request, id):
 
     return render(request, 'project.html', {'project':project})   
 
-@login_required(login_url='/account/login')
+@login_required(login_url='/accounts/login/')
 def search_projects(request):
-    if 'project' in request.GET:
-        search_term = request.GET['project']:
-        search_projects = Projects.search_projects(search_term)
+    if 'project' in request.GET and request.GET['project']:
+        search_term = request.GET["project"]
+        searched_projects = Projects.search_projects(search_term)
         message = f"{search_term}"
+        
         return render(request, 'search.html', {"message":message, "projects": searched_projects})
 
             
