@@ -3,6 +3,9 @@ from django.contrib.auth.decorators import login_required
 from .forms import *
 from .models import *
 from django.contrib import messages
+from rest_framework.views import APIView
+from .serializer import *
+
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -112,4 +115,9 @@ def search_projects(request):
         message = "You have not search any project"
 
         return render(request, 'search.html', {"message":message})
-            
+
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        allprojects = Projects.objects.all()
+        serializers = ProjectSerializer(allprojects, many=True)
+        return Response(serializers.data)            
