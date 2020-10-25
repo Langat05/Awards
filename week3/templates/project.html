@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+{% load ratings %}
+    {% block content %}
+    <hr class="mt-5">
+      <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                  <div class="profile-img">
+                    <img class="profile-image" src="{{ project.author.profile.image.url }}" alt="img" height="200px" style="border-radius: 50%;">
+                  </div>
+                  <div class="project-author">
+                    <h2 class="account-header mb-2">{{project.author}}</h2>
+                  </div>
+                  <img  src="{{project.image.url}}" class=" mt-2 w-100" alt="">
+                  <a href="{{project.link}}" target="_blank"><input class="btn btn-info mt-3" type="button" value="Visit Site"></a>
+
+                </div>
+
+                <div class="col-md-4">
+                  <h1 class="ml-3">Poject Title</h1>
+                  <hr>
+                  <p class="mt-5 ml-5">{{project.title}}<p><br>
+                  <h1 class="ml-3">Project Description</h1>
+                  <hr>
+                  <p class="mt-2"> {{project.description}}</p>
+                  <hr>
+                  <h4 class="text-info">Posted On: {{project.created_date}}</h4>
+
+                </div>
+                <div class="col-md">
+                  <h1>Ratings</h1>
+                  {% ratings project %}
+                </div>
+            </div>
+        </div>
+    {% endblock %}
