@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+<section id="projects">
+    <div class="container-fluid">
+        <div class="container-fluid mb-5">
+            <div class="row">
+                <div class="col-md-8">
+                    <h4>Posted Projects</h4>
+                </div>
+                <div class="col-md-4">
+                </div>
+            </div>
+        </div>
+        <div class="row pl-3 pr-3 ml-3 mr-3">
+            {% for project_item in projects %}
+            <div class="col-md-4">
+                <div class="card-deck">
+
+                    <div class="card">
+                        <div class="view overlay zoom">
+                            <img class="card-img-top" src="{{project_item.image.url}}"
+                                alt="{{ project_item.project_name }}" width="200px" height="200px">
+                            </a>
+                        </div>
+
+                        <div class="card-body">
+                            <h4 class="card-title"> {{ project_item.title }}</h4>
+                            <a class="btn btn-outline-info" href="/project/{{project_item.id}}">View details</a>
+                        </div>
+                        <div class="card-footer">
+                            <span class="dark-text"><img src="{{ project_item.author.profile.image.url }}" alt=""
+                                    style="width: 50px; border-radius: 50%;">
+                                Posted By {{project_item.author}} <br>
+                                <span class="ml-2 dark-text">On: {{project_item.created_date}}</span></span>
+                        </div>
+                    </div>
+                </div>         ​
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
