@@ -84,5 +84,13 @@
                     </div>
                     {% endif %}
                     </ul>
+                    <div class="navbar-nav">
+                        <div class="text-center">
+                            <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_projects' %}">
+                                <input style="text-align: center;" class="form-control" name="username" type="search"
+                                    placeholder="Search... " aria-label="Search">
+                            </form>
+                        </div>
+                    </div>
                 </div>
         </nav>
