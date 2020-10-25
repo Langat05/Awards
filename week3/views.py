@@ -1,13 +1,13 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from .forms import *
 from .models import *
-from django.contrib import messages
+from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializer import *
 
 
-# Create your views here.
 @login_required(login_url='/accounts/login/')
 def home(request):
     projects = Projects.objects.all()
@@ -15,6 +15,7 @@ def home(request):
     "projects":projects,
     }
     return render(request, 'index.html', locals())
+
 
 def registration(request):
     if request.method == 'POST':
@@ -53,7 +54,8 @@ def updateprofile(request):
     'projects':projects,
     }
 
-    return render(request, 'profile/edit_profile.html', context)    
+    return render(request, 'profile/edit_profile.html', context)
+
 
 @login_required(login_url='/accounts/login/')
 def profile(request):
@@ -77,7 +79,8 @@ def profile(request):
     'posts':posts,
     'projects':projects,
     }
-    return render(request, 'profile/profile.html', context) 
+    return render(request, 'profile/profile.html', context)
+
 
 @login_required(login_url='/accounts/login/')
 def postproject(request):
@@ -100,7 +103,7 @@ def postproject(request):
 def get_project(request, id):
     project = Projects.objects.get(pk=id)
 
-    return render(request, 'project.html', {'project':project})   
+    return render(request, 'project.html', {'project':project})
 
 @login_required(login_url='/accounts/login/')
 def search_projects(request):
@@ -110,20 +113,22 @@ def search_projects(request):
         message = f"{search_term}"
         
         return render(request, 'search.html', {"message":message, "projects": searched_projects})
-    
     else:
-        message = "You have not search any project"
+        message = "You haven't searched for any user"
 
         return render(request, 'search.html', {"message":message})
+
+
 
 class ProjectList(APIView):
     def get(self, request, format=None):
         allprojects = Projects.objects.all()
         serializers = ProjectSerializer(allprojects, many=True)
-        return Response(serializers.data)     
+        return Response(serializers.data)
+
 
 class ProfileList(APIView):
     def get(self, request, format=None):
         allprofiles = Profile.objects.all()
         serializers = ProfileSerializer(allprofiles, many=True)
-        return Response(serializers.data)               
+        return Response(serializers.data)
