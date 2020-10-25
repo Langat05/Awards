@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load bootsrap4 %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% if projects %}
+        <p>There are {{ projects | length }} projects.</p>
+        {% else %}
+        <p>No project found</p>
+        {% endif %}
+    </div>
+</div>
