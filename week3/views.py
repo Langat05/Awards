@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from .forms import *
 from .models import *
+from django.contrib import messages
 
 # Create your views here.
 @login_required(login_url='/accounts/login/')
@@ -106,5 +107,9 @@ def search_projects(request):
         message = f"{search_term}"
         
         return render(request, 'search.html', {"message":message, "projects": searched_projects})
+    
+        else:
+        message = "You have not search any project"
 
+        return render(request, 'search.html', {"message":message})
             
