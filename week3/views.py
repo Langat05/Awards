@@ -96,4 +96,14 @@ def postproject(request):
 def get_project(request, id):
     project = Projects.objects.get(pk=id)
 
-    return render(request, 'project.html', {'project':project})       
+    return render(request, 'project.html', {'project':project})   
+
+@login_required(login_url='/account/login')
+def search_projects(request):
+    if 'project' in request.GET:
+        search_term = request.GET['project']:
+        search_projects = Projects.search_projects(search_term)
+        message = f"{search_term}"
+        return render(request, 'search.html', {"message":message, "projects": searched_projects})
+
+            
