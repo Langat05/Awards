@@ -2,7 +2,10 @@
 ## Author
 - Langat K Justus
 # Description
-This is an Awwards clone app. It displayes different projects posted by different users. The user has to register and login to the app for the to see the ratings of the projects and also to rate the project. The users can also post their projects and have it reviewed by other users. 
+This is an Awwards clone app. It displayes different projects posted by different users. The user has to register and login to the app for them to see the ratings of the projects and also to rate the project. The users can also post their projects and have it reviewed by other users. 
+
+# Screenshot of the app
+![Screenshot from 2020-10-26 16-44-38](https://user-images.githubusercontent.com/57387935/97180209-d461f200-17aa-11eb-946d-015b42fa9d40.png)
 
 
 
