@@ -1,17 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-<section id="projects">
+<section id="projects" style="background-color: #343148; color:aliceblue;">
     <div class="container">
         <div class="container mb-5">
             <div class="row">
-                <div class="col-md-8 mt-3" style="text-align:center">
+                <div class="col-md-8 mt-3" style="text-align:center;">
                     <h4>Posted Projects</h4>
                 </div>
                 <div class="col-md-4">
                 </div>
             </div>
         </div>
-        <div class="row pl-3 pr-3 ml-3 mr-3">
+        <div class="row pl-3 pr-3 ml-3 mr-3" style="color:black">
             {% for project_item in projects %}
             <div class="col-md-4">
                 <div class="card-deck">

@@ -2,14 +2,14 @@
 {% load bootstrap4 %}
 
 {% block content %}
-<div class="container"><br><br>
+<div class="container" style="background-color: #343148; color:aliceblue;"><br><br>
     <div class="row sign-up">
         <div class="col-md-4">
             {% if form.errors %}
             <p class="small">Password or Username is incorrect</p>
             {% endif %}
             <div class="section">
-                <h1 style='color:#8a3ab9; text-align:center;'><b>Awwards</b></h1>
+                <h1 style='text-align:center;'><b>Awwards</b></h1>
                 <div class="form-section">
                     <form action="/accounts/login/" method="POST">
                         {% csrf_token %}

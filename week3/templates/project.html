@@ -3,17 +3,15 @@
 {% load ratings %}
 {% block content %}
 <hr class="mt-5">
-<div class="container-fluid">
+<div class="container" style="background-color: #343148; color:aliceblue;">
   <div class="row">
     <div class="col-md-4">
       <div class="profile-img">
-        <img class="profile-image" src="{{ project.author.profile.image.url }}" alt="img" height="200px"
-          style="border-radius: 50%;">
-      </div>
-      <div class="project-author">
+        <img class="profile-image" src="{{ project.author.profile.image.url }}" alt="img"
+          style="border-radius: 50%; height:4rem; width:4rem;">
         <h2 class="account-header mb-2">{{project.author}}</h2>
       </div>
-      <img src="{{project.image.url}}" class=" mt-2 w-100" alt="">
+      <img src="{{project.image.url}}" class=" mt-2 w-100" alt=""><hr class="mt-5">
       <a href="{{project.link}}" target="_blank"><input class="btn btn-info mt-3" type="button" value="Visit Site"></a>
 
     </div>
