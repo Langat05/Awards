@@ -34,7 +34,8 @@ pip install -r requirements.txt
 # Bugs
 No known bugs at the moment
 
-
+# codebeat
+[![codebeat badge](https://codebeat.co/badges/a42dca5a-8548-4172-8ddc-58053934b546)](https://codebeat.co/projects/github-com-langat05-awards-master)
 
 
 # License
