@@ -8,7 +8,7 @@
         <div class="col-md-4">
         </div>
         <div class="col-md-4">
-            <img class="rounded-circle account-profile " src="{{user.profile.image.url}}" alt="user" height="200px"
+            <img class="rounded-circle account-profile " src="{{ user.profile.image.url }}" alt="user" height="200px"
                 width="200px">
             <div class="media-container">
                 <h2 class="account-header">Name: {{user.username}}</h2>
@@ -16,8 +16,6 @@
             </div>
             <p class="ml-3">Bio: {{user.profile.bio}}</p>
             <a class="btn btn-info" href="{% url 'updateprofile' %}">Update Profile</a>
-
-
 
         </div>
     </div>
