@@ -11,7 +11,7 @@ from django.http import Http404
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     image = models.ImageField(default='default.png', upload_to='profile_pics/')
-    bio = models.CharField(max_length=255)
+    bio = models.CharField(max_length=255, blank=True)
 
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -38,7 +38,7 @@ class Projects(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     title = models.CharField(max_length=255)
     link = models.URLField()
-    author_profile = models.ForeignKey(Profile, on_delete=models.CASCADE, default='1', blank = True)
+    author_profile = models.ForeignKey(Profile, on_delete=models.CASCADE, blank = True, null=True)
 
     def save_project(self):
         self.save()
